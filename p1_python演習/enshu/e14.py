@@ -2,12 +2,8 @@ from math import log
 import pandas as pd
 import math
 
-docs = [["リンゴ", "リンゴ"], ["リンゴ", "レモン"], ["レモン", "ミカン"]]
-terms = ["リンゴ", "レモン", "ミカン"]
-N = len(docs)
 
-
-def idf(term, doc):
+def idf(term, docs):
     df = 0
     for doc in docs:
         df += term in doc
@@ -15,11 +11,15 @@ def idf(term, doc):
     return math.log10(N / df) + 1
 
 
+docs = [["リンゴ", "リンゴ"], ["リンゴ", "レモン"], ["レモン", "ミカン"]]
+terms = ["リンゴ", "レモン", "ミカン"]
+N = len(docs)
+
+
 result = []
 for j in range(len(terms)):
     t = terms[j]
-    d = docs[j]
-    result.append(idf(t, d))
+    result.append(idf(t, docs))
 
 idf_ = pd.DataFrame(result, index=terms, columns=["IDF"])
 print(idf_)
