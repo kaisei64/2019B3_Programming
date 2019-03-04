@@ -21,4 +21,3 @@ for i in range(N):
 tf_ = pd.DataFrame(result, columns=terms)
 print(tf_)
 print()
-print("0: ['リンゴ', 'リンゴ'], 1: ['リンゴ', 'レモン'], 2: ['レモン', 'ミカン']")
