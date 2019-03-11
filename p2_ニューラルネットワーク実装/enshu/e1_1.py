@@ -10,4 +10,3 @@ class Perceptron:
             return 1
         elif y < self.theta:
             return 0
-
