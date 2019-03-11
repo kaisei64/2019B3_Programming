@@ -1,11 +1,15 @@
 import numpy as np
 import math
 
+e = math.e
 
 def Relu(x):
     return np.maximum(0, x)
 
-x = np.array([-1.0, 0.0, 0.5, 2.0])
-e = math.e
+def main():
+    x = np.array([-1.0, 0.0, 0.5, 2.0])
 
-print(Relu(x))
+    print(Relu(x))
+
+if __name__ == "__main__":
+    main()
