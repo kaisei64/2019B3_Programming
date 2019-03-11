@@ -18,8 +18,12 @@ def XOR(x1, x2):
     y = s3.Forward(t1, t2)
     return y
 
-x1_list = [1, 1, 0, 0]
-x2_list = [1, 0, 1, 0]
+def main():
+    x1_list = [1, 1, 0, 0]
+    x2_list = [1, 0, 1, 0]
 
-for x1, x2 in zip(x1_list,x2_list):
-    print("XOR({0}, {1}) = {2}  ".format(x1, x2, XOR(x1, x2)))
+    for x1, x2 in zip(x1_list,x2_list):
+        print("XOR({0}, {1}) = {2}  ".format(x1, x2, XOR(x1, x2)))
+
+if __name__ == "__main__":
+    main()
