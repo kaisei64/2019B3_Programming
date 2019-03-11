@@ -1,5 +1,3 @@
-import numpy as np
-
 class Multiply():
     def __init__(self):
         """ 逆伝播計算に必要な変数：forwardの入力値 """
