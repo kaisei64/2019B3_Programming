@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Affine:
     def __init__(self, W, b):
         self.W = W
@@ -7,15 +8,18 @@ class Affine:
         self.x = None
         self.dW = None
         self.db = None
+
     def forward(self, x):
         self.x = x
         out = np.dot(x, self.W) + self.b
         return out
+
     def backprop(self, dout):
         dx = np.dot(dout, self.W.T)
         self.dW = np.dot(self.x.T, dout)
         self.db = np.sum(dout, axis=0)
         return dx
+
 
 def main():
     x = np.array([[1.0, 0.5], [-0.4, 0.1]])
@@ -31,6 +35,7 @@ def main():
     print("逆伝播出力dx: \n{0}".format(dx))
     print("逆伝播出力dw: \n{0}".format(aff.dW))
     print("逆伝播出力db: \n{0}".format(aff.db))
+
 
 if __name__ == "__main__":
     main()
